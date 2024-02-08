@@ -37,11 +37,14 @@ import java.util.Random;
  */
 public class Save {
 
+//region field variables
     // Field Variables
-    int title, seed, progress, percentage;
-    String list;
-    List<String> history;
+    private int title, seed, progress, percentage;
+    private String list;
+    private List<String> history;
+//endregion
 
+//region constructors
     // Constructor(s)
     public Save() { // Random new save, no parameters, default values
         this.title = Main.getLatest();
@@ -58,8 +61,12 @@ public class Save {
         if (cSeed != null) { this.seed=cSeed; }
         if (cList != null) { this.list=cList; }
     } // end of Save
+//endregion
 
-    // Accessor methods
+    // Methods
+
+//region getter
+    // Getter methods
     public int getTitle() {
         return title;
 
@@ -94,14 +101,15 @@ public class Save {
         return history;
 
     } // end of getHistory
+//endregion
 
 
-    // Modification methods
+//region setter
+    // Setter methods
     public void setTitle(int title) {
         this.title = title;
 
     } // end of setTitle
-
 
 
     public void setProgress(int progress) {
@@ -114,17 +122,24 @@ public class Save {
         this.percentage = percentage;
 
     } // end of setPercentage
+//endregion
 
 
+//region adder
+    // Adder methods
     public void addToHistory(String action) {
         this.history.add(action);
 
     } // end of addToHistory
+//endregion
 
 
+//region writer
+    // Writer methods
     public void writeToFile(int title, String... data) {
         // code utilizing @FM.java here
 
     } // end of writeToFile
+//endregion
 
 } // end of Save

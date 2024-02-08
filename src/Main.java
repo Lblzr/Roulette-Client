@@ -18,6 +18,10 @@ public class Main {
 
     public static int getLatest() {
 
+        if (System.getenv("APPDATA") == null) {
+            throw new RuntimeException("APPDATA environment variable is not set");
+        }
+
         File folder = new File(System.getenv("APPDATA") + "/Roulette-Client/");
         File[] files = folder.listFiles();
 
